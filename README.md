@@ -86,6 +86,8 @@ The objective of this pipeline is to detect AI-generated content by integrating 
   - **Method:** Slightly perturb the text (e.g., random character substitution) and measure the change in GPT‑2 log probability.
   - **Rationale:** A smaller change in probability after perturbation can signal a more uniform and synthetic text pattern.
 
+## Novel features
+
 I introduced 2 new features apart from current area of research:
 
 **Layer-wise Log Perplexity:**
