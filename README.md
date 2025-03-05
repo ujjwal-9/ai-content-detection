@@ -14,8 +14,11 @@ $ git clone https://github.com/vivek3141/ghostbuster-data.git
 ```
 
 3. Run Experiment:
+
+I used max 3000 samples for training.
+
 ```bash
-$ python main.py --train --batch-size 1024 --max-samples 2000 --gpus 4 --save-cm plots/cm.png --use-logistic
+$ python main.py --batch-size 1024 --gpus 4 --train --plot-cm --save-cm plots/confusion_matrix.png --use-logistic --max-samples 3000
 ```
 
 4. Inference:
@@ -126,10 +129,29 @@ The objective of this pipeline is to detect AI-generated content by integrating 
   - **Rationale:** Provides a straightforward, interpretable alternative with lower computational overhead.
 
 ### Evaluation Metrics
+```python
+feature_info = {
+            "model_llm_name": "distilbert-base-uncased-finetuned-sst-2-english",
+            "model_gpt_name": "gpt2",
+            "feature_names": [
+                "logits",
+                "linguistic_features",
+                "detectgpt",
+                "perplexity",
+                "first_layer_perplexity",
+                "last_layer_perplexity",
+            ],
+            "num_features": features.shape[1],
+        }
+```
 
 - **Metrics Used:**
   - **Accuracy, F1 Score, Precision, Recall:** Standard measures to assess model performance.
   - **Confusion Matrix:** Visualized to analyze misclassifications and understand the distribution of prediction errors.
+
+  ```
+  Accuracy: 94.2%
+  F1 Score: 94
 
 ### Feature Importance Analysis
 
@@ -163,4 +185,16 @@ This pipeline demonstrates a comprehensive approach to AI content detection by c
 
 The synergy of these diverse features enables the classifier to effectively differentiate between human-written and AI-generated text. With robust multi-GPU support and detailed error handling, the system is designed for scalability and reliability in real-world applications.
 
-Future work will focus on refining feature extraction techniques, exploring additional metrics, and optimizing model training for enhanced performance.
+
+## 8. Experimental Results
+
+Below are visualizations of our experimental results, Perplexity change across language models' layers for humans and AI generated text:
+
+![Human Prompt 1](assets/human-1.jpeg)
+![Human Prompt 2](assets/human-2.jpeg)
+![AI Prompt 1](assets/ai-1.jpeg)
+![AI Prompt 2](assets/ai-2.jpeg)
+
+
+
+
