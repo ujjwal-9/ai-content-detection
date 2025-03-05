@@ -102,17 +102,18 @@ I introduced 2 new features apart from current area of research:
 
 Below are visualizations of our experimental results, Perplexity change across language models' layers for humans and AI generated text:
 
-![Human Prompt 1](assets/human-1.jpeg)
 *Figure 1: Layer-wise variation in perplexity for Human Text 1*
+![Human Prompt 1](assets/human-1.jpeg)
 
-![Human Prompt 2](assets/human-2.jpeg)
 *Figure 2: Layer-wise variation in perplexity for Human Text 2*
+![Human Prompt 2](assets/human-2.jpeg)
 
-![AI Prompt 1](assets/ai-1.jpeg)
 *Figure 3: Layer-wise variation in perplexity for AI-generated Text 1*
+![AI Prompt 1](assets/ai-1.jpeg)
 
-![AI Prompt 2](assets/ai-2.jpeg)
 *Figure 4: Layer-wise variation in perplexity for AI-generated Text 2*
+![AI Prompt 2](assets/ai-2.jpeg)
+
 
 Inference: Human text tend to have gradual perplexity increase as observed by finding variaiton caused in models logits as we incrementally feed text to the model. On the other hand AI sees much less variation in terms on perplexity across layers.
 
