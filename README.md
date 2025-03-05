@@ -94,6 +94,21 @@ The objective of this pipeline is to detect AI-generated content by integrating 
   - **Method:** Slightly perturb the text (e.g., random character substitution) and measure the change in GPT‑2 log probability.
   - **Rationale:** A smaller change in probability after perturbation can signal a more uniform and synthetic text pattern.
 
+## Why I choose Layer-wise Log Perplexity and Burstiness:
+
+Below are visualizations of our experimental results, Perplexity change across language models' layers for humans and AI generated text:
+
+![Human Prompt 1](assets/human-1.jpeg)
+![Human Prompt 2](assets/human-2.jpeg)
+![AI Prompt 1](assets/ai-1.jpeg)
+![AI Prompt 2](assets/ai-2.jpeg)
+
+Inference: Human text tend to have gradual perplexity increase as observed by finding variaiton caused in models logits as we incrementally feed text to the model. On the other hand AI sees much less variation in terms on perplexity across layers.
+
+Layer 1 to Layer 12 difference might seem same but perplexity contribution to subsequent layer is much less compared to human text.
+
+It might either indicate biased data or fundamental observation about AI generated text and human generated text.
+
 ---
 
 ## 4. Processing Pipeline and Scalability
@@ -184,17 +199,3 @@ This pipeline demonstrates a comprehensive approach to AI content detection by c
 - **Handcrafted linguistic features.**
 
 The synergy of these diverse features enables the classifier to effectively differentiate between human-written and AI-generated text. With robust multi-GPU support and detailed error handling, the system is designed for scalability and reliability in real-world applications.
-
-
-## 8. Experimental Results
-
-Below are visualizations of our experimental results, Perplexity change across language models' layers for humans and AI generated text:
-
-![Human Prompt 1](assets/human-1.jpeg)
-![Human Prompt 2](assets/human-2.jpeg)
-![AI Prompt 1](assets/ai-1.jpeg)
-![AI Prompt 2](assets/ai-2.jpeg)
-
-
-
-
