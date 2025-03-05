@@ -164,32 +164,15 @@ feature_info = {
   - **Accuracy, F1 Score, Precision, Recall:** Standard measures to assess model performance.
   - **Confusion Matrix:** Visualized to analyze misclassifications and understand the distribution of prediction errors.
 
-  ```
-  Accuracy: 94.2%
-  F1 Score: 94
+- **Model Evaluation:**
+```
+Accuracy: 0.9425
+F1 Score: 0.9438
+Precision: 0.9233
+Recall: 0.9652
+```
 
-### Feature Importance Analysis
-
-- **Purpose:**
-  - Assessing which features (e.g., perplexity, burstiness, logits) are most influential can guide further feature refinement and model improvements.
-
----
-
-## 6. Insights and Future Directions
-
-- **Feature Refinement:**  
-  - Further investigation into alternative metrics (e.g., entropy-based features, n-gram patterns) may enhance detection capabilities.
-  
-- **Model Fine-tuning:**
-  - Fine-tuning DistilBERT or GPT‑2 on domain-specific datasets could yield more discriminative features.
-  
-- **Real-Time Processing:**
-  - Optimizing the multi-GPU pipeline and exploring streaming data approaches can enable real-time AI content detection.
-  
-- **Ensemble Methods:**
-  - Combining multiple classifiers or incorporating deep ensemble techniques could further improve robustness and accuracy.
-
----
+![Confusion matrix](assets/confusion_matrix.png)
 
 ## 7. Conclusion
 
