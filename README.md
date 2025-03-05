@@ -80,19 +80,21 @@ The objective of this pipeline is to detect AI-generated content by integrating 
 
 - **Overall Perplexity:**
   - **Definition:** Exponential of the average negative log-likelihood; reflects how “surprised” GPT‑2 is by the text.
-  - **Rationale:** Unnatural or repetitive patterns in AI-generated text may lead to distinct perplexity scores.
-
-- **Layer-wise Log Perplexity:**
-  - **Implementation:** Uses hidden states from selected transformer layers to compute cross-entropy loss.
-  - **Rationale:** Raw loss values (log perplexity) from early or late layers provide a granular measure of the model’s prediction uncertainty without resulting in huge exponential values.
-
-- **Burstiness:**
-  - **Definition:** Standard deviation of token log probabilities (post-softmax) for the ground truth tokens.
-  - **Rationale:** Higher burstiness suggests more variability in token confidence, potentially indicating machine-generated text.
+  - **Rationale:** Unnatural or repetitive patterns in AI-generated text may lead to distinct perplexity scores. It is shown to be helpful but can't be depended upon solely.
 
 - **DetectGPT-Inspired Feature:**
   - **Method:** Slightly perturb the text (e.g., random character substitution) and measure the change in GPT‑2 log probability.
   - **Rationale:** A smaller change in probability after perturbation can signal a more uniform and synthetic text pattern.
+
+I introduced 2 new features apart from current area of research:
+
+**Layer-wise Log Perplexity:**
+  - **Implementation:** Uses hidden states from selected transformer layers to compute cross-entropy loss.
+  - **Rationale:** Raw loss values (log perplexity) from early or late layers provide a granular measure of the model’s prediction uncertainty without resulting in huge exponential values.
+
+**Burstiness:**
+  - **Definition:** Standard deviation of token log probabilities (post-softmax) for the ground truth tokens.
+  - **Rationale:** Higher burstiness suggests more variability in token confidence, potentially indicating machine-generated text.
 
 ## Why I choose Layer-wise Log Perplexity and Burstiness:
 
