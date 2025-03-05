@@ -1,6 +1,27 @@
 # ai-content-detection
 Detect AI content using weak small language models
 
+## Execution
+
+1. Install dependecies:
+```bash
+$ pip install -r requirements.txt
+```
+
+2. Download data:
+```bash
+$ git clone https://github.com/vivek3141/ghostbuster-data.git
+```
+
+3. Run Experiment:
+```bash
+$ python main.py --train --batch-size 1024 --max-samples 2000 --gpus 4 --save-cm plots/cm.png --use-logistic
+```
+
+4. Inference:
+```bash
+$ python main.py --predict_file [file with text]
+```
 
 ## 1. Introduction
 
