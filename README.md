@@ -102,6 +102,8 @@ I introduced 2 new features apart from current area of research:
 
 Below are visualizations of our experimental results, Perplexity change across language models' layers for humans and AI generated text:
 
+**Blue is perplexity and orange is burstiness.**
+
 *Figure 1: Layer-wise variation in perplexity for Human Text 1*
 ![Human Prompt 1](assets/human-1.jpeg)
 
