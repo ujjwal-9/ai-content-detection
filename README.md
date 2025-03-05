@@ -135,14 +135,6 @@ It might either indicate biased data or fundamental observation about AI generat
   - **ThreadPoolExecutor:** Used for parallel execution with GPUs assigned in a round-robin fashion.
   - **Fallback:** When GPUs are unavailable, the system defaults to CPU processing.
 
-### Data Preprocessing and Robustness
-
-- **Text Truncation:**
-  - Very long texts are truncated to avoid CUDA memory issues.
-  
-- **Error Handling:**
-  - Samples that cause errors are skipped to ensure the overall pipeline remains robust and efficient.
-
 ---
 
 ## 5. Classification and Evaluation
