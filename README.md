@@ -3,25 +3,25 @@ Detect AI content using weak small language models
 
 ## Execution
 
-1. Install dependecies:
+**1. Install dependecies:**
 ```bash
 $ pip install -r requirements.txt
 ```
 
-2. Download data:
+**2. Download data:**
 ```bash
 $ git clone https://github.com/vivek3141/ghostbuster-data.git
 ```
 
-3. Run Experiment:
+**3. Run Experiment:**
 
-I used max 3000 samples for training.
+**I used max 2000 samples for training. Using more training data could yield better results.**
 
 ```bash
-$ python main.py --batch-size 1024 --gpus 4 --train --plot-cm --save-cm plots/confusion_matrix.png --use-logistic --max-samples 3000
+$ python main.py --batch-size 1024 --gpus 4 --train --plot-cm --save-cm plots/confusion_matrix.png --use-logistic --max-samples 2000
 ```
 
-4. Inference:
+**4. Inference:**
 ```bash
 $ python main.py --predict_file [file with text]
 ```
